@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/materialLavendar</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="sectionHeader"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:drawableBottom">@drawable/section_header</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/materialLavendar</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="headerSettings"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:drawableBottom">@drawable/header_settings</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/approvalDialog</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+
+    <style name="textViewRecycler"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/cardViewTextColor</item>
+        <item name="android:textSize">19dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="textViewActivity"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/cardViewTextColor</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="coloumnText"   parent="android:Widget.Holo.Light.TextView">
+
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorSelection</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="activityHour"   parent="android:Widget.Holo.Light.TextView">
+
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorCardViewDark</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="WelcomeButtons" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/materialPurple</item>
+        <item name="colorButtonNormal">@color/approvalDialog</item>
+
+    </style>
+
+
+</resources>

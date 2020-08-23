@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialog_border_tsk">
+
+        <ImageView
+            android:id="@+id/tkkLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/tkk"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="180dp"/>
+
+        <TextView
+            android:id="@+id/textViewResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tkkLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="90dp"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/buttonCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewResults"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="150dp"
+            android:text="Tankta öde!" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialog_border_opet">
+
+        <ImageView
+            android:id="@+id/imageViewOpet"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/opetlogo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="180dp"/>
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:indeterminateTint="@android:color/holo_orange_light"
+            android:indeterminateTintMode="src_atop"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.58000004" />
+
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:inputType="number"
+            android:maxLength="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/imageViewOpet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="90dp"
+            android:hint="Tutarı giriniz."
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:backgroundTint="@color/opetYellow"
+
+            />
+
+        <Button
+            android:id="@+id/buttonSell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="150dp"
+            android:text="Satış yap" />
+
+        <TextView
+            android:id="@+id/posMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="150dp"
+            android:text="Ödeme bekleniyor..."
+            android:textSize="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

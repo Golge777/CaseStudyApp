@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorThumb">#ED7899</color>
+    <color name="colorProgress">#00e676</color>
+    <color name="colorBar">#F6D397</color>
+    <color name="colorBarDark">#FAB854</color>
+    <color name="textColor">#9e9e9e</color>
+    <color name="blue_grey">#1766C0</color>
+    <color name="emphasis">#1766C0</color>
+    <color name="emphasisLight">#BFE9FF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorCardView">#EDE7F6</color>
+    <color name="colorCardViewDark">#B0A8BB</color>
+    <color name="colorImageViewBorder">#255D79</color>
+    <color name="materialBlack">#000000</color>
+    <color name="materialPurple">#6200EE</color>
+    <color name="materialColorThumb">#6200EE</color>
+    <color name="materialColorProgress">#00e676</color>
+    <color name="materialColorBar">#70008577</color>
+    <color name="materialColorBarDark">#008577</color>
+    <color name="colorGallery">#72CAAF</color>
+    <color name="colorSelection">#585656</color>
+    <color name="darkerGray">#aaaaaa</color>
+    <color name="materialWhite">#FFFFFF</color>
+    <color name="indigo">#9F489B</color>
+    <color name="pink">#FF4081</color>
+    <color name="backgroundColor">#ECECEC</color>
+    <color name="backgroundColorLight">#F3F3F3</color>
+    <color name="materialLavendar">#FF564E99</color>
+    <color name="materialHighlight">#FF796899</color>
+    <color name="cardViewTextColor">#4E56FF</color>
+    <color name="cardViewTickedColor">#A9DBAC</color>
+    <color name="cardViewTickButton">#3FFF48</color>
+    <color name="cardViewUntickedColor">#FFE40A</color>
+    <color name="cardViewDeleteColor">#FF3535</color>
+    <color name="cardViewEditColor">#6042A0</color>
+    <color name="textColorDark">#8D8D8D</color>
+    <color name="lightDarkGray">#E3E3E3</color>
+    <color name="tskRed">#b00b0b</color>
+    <color name="opetBlue">#006EB6</color>
+    <color name="opetBackground">#00b0f0</color>
+    <color name="opetYellow">#F9B32A</color>
+    <color name="approvalDialog">#d67e74</color>
+
+
+</resources>
