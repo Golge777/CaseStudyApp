@@ -257,15 +257,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void PostPOSRequest(final String theAmount)
     {
+        JSONObject jsonObject = new JSONObject();
+        try
+        {
+            jsonObject.put("totalReceiptAmount", Integer.valueOf(theAmount));
 
-    StringRequest postRequest = new StringRequest(Request.Method.POST, urlGET, new Response.Listener<String>() {
+        } catch (JSONException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, urlGET, jsonObject, new Response.Listener<JSONObject>() {
         @Override
-        public void onResponse(String response) {
+        public void onResponse(JSONObject response) {
 
-            Log.d("accessToken:",response);
+            Log.d("accessToken:",response.toString());
             //textViewResults.setText(response);
-            qrData = response.substring(46);
-            originalQRData = qrData.substring(0, qrData.length() - 1);
+            qrData = response.toString().substring(46);
+            originalQRData = qrData.substring(1, qrData.length() - 2);
             //textViewResults.setText(originalQRData);
 
             QRGEncoder qrgEncoder = new QRGEncoder(qrData, null, QRGContents.Type.TEXT, 10);
@@ -314,36 +324,6 @@ public class MainActivity extends AppCompatActivity {
             }){
 
         @Override
-        public byte[] getBody()
-        {
-
-            JSONObject jsonObject = new JSONObject();
-            String body = null;
-
-            try
-            {
-                jsonObject.put("totalReceiptAmount", Integer.valueOf(theAmount));
-
-                body = jsonObject.toString();
-
-            } catch (JSONException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-            try
-            {
-                return body.toString().getBytes("utf-8");
-            } catch (UnsupportedEncodingException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
         public Map<String, String> getHeaders() throws AuthFailureError {
             Map<String,String> headers=new HashMap<String,String>();
             headers.put("accept","application/json");
@@ -357,16 +337,61 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
+
+
     private void PostPaymentRequest(final int theAmountReceived)
     {
 
+        JSONObject root = new JSONObject();
+
+        try
+        {
+
+        root.put("returnCode", 1000);
+        root.put("returnDesc", "success");
+        root.put("receiptMsgCustomer", "beko Campaign/n2018");
+        root.put("receiptMsgMerchant", "beko Campaign Merchant/n2018");
+
+        JSONObject paymentActionList = new JSONObject();
+
+        paymentActionList.put("paymentType", 3);
+        paymentActionList.put("amount", 100);
+        paymentActionList.put("currencyID", 949);
+        paymentActionList.put("vatRate", 800);
+
+        JSONArray paymentActionListArray = new JSONArray();
+
+        paymentActionListArray.put(paymentActionList);
+
+        JSONObject paymentInfoList = new JSONObject();
+
+        paymentInfoList.put("paymentProcessorID", 67);
+        paymentInfoList.put("paymentActionList", paymentActionListArray);
+
+        JSONArray paymentInfoListArray = new JSONArray();
+
+        paymentInfoListArray.put(paymentInfoList);
+
+        root.put("paymentInfoList", paymentInfoListArray);
+        textViewResults.setText(originalQRData);
+        root.put("QRdata",  originalQRData);
+        Log.d("tag", root.toString());
+
+
+
+        } catch (JSONException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
         //Toast.makeText(this, "Hey", Toast.LENGTH_LONG).show(); -- Buraya kadar hatasız
-        StringRequest postPaymentRequest = new StringRequest(Request.Method.POST, urlPayment, new Response.Listener<String>(){
+        JsonObjectRequest postPaymentRequest = new JsonObjectRequest(Request.Method.POST, urlPayment, root, new Response.Listener<JSONObject>() {
 
             @Override
-            public void onResponse(String response) {
+            public void onResponse(JSONObject response) {
 
-                Log.d("accessToken2:",response);
+                Log.d("accessToken2:",response.toString());
 
             }
         }, new Response.ErrorListener() {
@@ -389,72 +414,14 @@ public class MainActivity extends AppCompatActivity {
                 return headers;
             }
 
-            @Override
-            public byte[] getBody()
-            {
-
-                JSONObject jsonObject = new JSONObject();
-                JSONObject jsonDummyObject = new JSONObject();
-                JSONObject jsonDummyObject2 = new JSONObject();
-                JSONArray paymentInfoList = new JSONArray();
-                JSONArray paymentActionList = new JSONArray();
-                String body = null;
-
-                try {
-                    jsonObject.put("returnCode", 1000);
-                    jsonObject.put("returnDesc", "success");
-                    jsonObject.put("receiptMsgCustomer", "beko Campaign/n2018");
-                    jsonObject.put("receiptMsgMerchant", "beko Campaign Merchant/n2018");
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                try {
-
-                    jsonDummyObject.put("paymentType", 3);
-                    jsonDummyObject.put("amount", Integer.valueOf(theAmountReceived));
-                    jsonDummyObject.put("currencyID", 949);
-                    jsonDummyObject.put("vatRate", 800);
-                    paymentActionList.put(jsonDummyObject);
-
-
-                    jsonDummyObject2.put("paymentProcessorID", 67);
-                    paymentInfoList.put(jsonDummyObject2);
-                    paymentInfoList.put(paymentActionList);
-                    jsonObject.put("paymentInfoList", paymentInfoList);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                try {
-
-                    jsonObject.put("QRdata", originalQRData);
-                    body = jsonObject.toString();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                try
-                {
-                    return body.toString().getBytes("utf-8");
-                } catch (UnsupportedEncodingException e)
-                {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-
 
         };
 
-        //postPaymentRequest.setRetryPolicy(new DefaultRetryPolicy( 50000, 5,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postPaymentRequest);
 
     }
+
+
 
     private void ShowApprovalDialog()
     {
