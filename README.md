@@ -6,4 +6,6 @@ The lower half is also designed as a solitary app that simulates a POS machine t
 
 ![resim](https://user-images.githubusercontent.com/47951005/91014261-c00a4900-e5f1-11ea-8402-4393c304f22a.png)
 
+In both of the applications, I tried to design a basic and alluring UI as much as I could to keep user interaction simple and non-bothersome. For instance, I employed progress bars to notify users that an ongoing operation is being processed.
 
+<br />Declarations of UI elements located in both Tank Panel & POS applications
