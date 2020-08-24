@@ -8,4 +8,7 @@ The lower half is also designed as a solitary app that simulates a POS machine t
 
 In both of the applications, I tried to design a basic and alluring UI as much as I could to keep user interaction simple and non-bothersome. For instance, I employed progress bars to notify users that an ongoing operation is being processed.
 
-<br />Declarations of UI elements located in both Tank Panel & POS applications
+The whole scenario starts with a sales request prompted from the POS application by entering the sales amount and clicking the sell button.\
+After the click, the POS application posts the sales request and receives the according QR data. Inside applicaton, we transform this QR data into
+a real QR code and get the following sales screen:
+
