@@ -29,5 +29,5 @@ If the payment is not successful, notifications appear on both applications acco
 
 ![resim](https://user-images.githubusercontent.com/47951005/91016570-a1a64c80-e5f5-11ea-884d-8d4b0f31bb12.png)
 
-Now everything is reset and the POS can make new sales request.
+Now everything is reset and the POS can make a new sales request.
 
