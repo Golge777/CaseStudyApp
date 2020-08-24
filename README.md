@@ -22,3 +22,9 @@ As soon as he clicks the pay button, the panel application shows the according a
 After checking the amount, date & time, the operator can either cancel or approve the sales by clicking the buttons.\
 If he approves the sales, the Tank Panel application sends a payment POST request and receives the according data from the server
 to reveal if the payment is approved or not. If the payment is approved notifications appear on both applications to display that the transaction has been a successful one.
+
+![resim](https://user-images.githubusercontent.com/47951005/91016391-5e4bde00-e5f5-11ea-906b-ec484ca953bc.png)
+
+If the payment is not successful, notifications appear on both applications accordingly as follows:
+
+
