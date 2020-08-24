@@ -27,4 +27,5 @@ to reveal if the payment is approved or not. If the payment is approved notifica
 
 If the payment is not successful, notifications appear on both applications accordingly as follows:
 
+![resim](https://user-images.githubusercontent.com/47951005/91016570-a1a64c80-e5f5-11ea-884d-8d4b0f31bb12.png)
 
