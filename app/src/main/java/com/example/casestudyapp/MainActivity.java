@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
     // I tried to design a basic and alluring UI as much as I could to keep user interaction simple and non-bothersome.
     // For instance, I employed progress bars to notify users that an ongoing operation is being processed.
-    // Additionally,
     // Declarations of UI elements located in both Tank Panel & POS applications
     private Button buttonCheck;
     private ImageView imageViewOpet;
@@ -318,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //First of all, we check if any sales has been prompted by checking the "simulated" server response isAnyPaymentAwaited
+        //First of all, by checking the "simulated" server response isAnyPaymentAwaited we check if any sales has been prompted
         buttonCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -363,10 +362,11 @@ public class MainActivity extends AppCompatActivity {
             qrData = response.toString().substring(46);
             originalQRData = qrData.substring(1, qrData.length() - 2);
 
+            //The three lines written below are added to show actual QR codes inside the POS application
             QRGEncoder qrgEncoder = new QRGEncoder(qrData, null, QRGContents.Type.TEXT, 10);
-
             Bitmap qrBits = qrgEncoder.getBitmap();
             imageViewOpet.setImageBitmap(qrBits);
+
             progressBar.setVisibility(View.INVISIBLE);
             textViewPosMessage.setVisibility(View.VISIBLE);
 
