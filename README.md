@@ -12,3 +12,7 @@ The whole scenario starts with a sales request prompted from the POS application
 After the click, the POS application posts the sales request and receives the according QR data. Inside applicaton, we transform this QR data into
 a real QR code and get the following sales screen:
 
+![resim](https://user-images.githubusercontent.com/47951005/91015106-46735a80-e5f3-11ea-9b20-40cc9f75c3bc.png)
+
+Assuming that the QR code is somehow transmitted to the tank, the operator inside the tank can now pay.\
+As soon as he clicks the pay button, the panel application shows the according amount, date & time to the operator to notify him about the payment details that are going to be processed.
