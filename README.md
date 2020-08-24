@@ -14,7 +14,7 @@ a real QR code and get the following sales screen:
 
 ![resim](https://user-images.githubusercontent.com/47951005/91015106-46735a80-e5f3-11ea-9b20-40cc9f75c3bc.png)
 
-Assuming that the QR code is somehow transmitted to the tank, the operator inside the tank can now pay.\
+Assuming that the QR code is somehow transmitted to the tank (i.e. method X), the operator inside the tank can now pay.\
 As soon as he clicks the pay button, the panel application shows the according amount, date & time to the operator to notify him about the sales details that are going to be processed.
 
 ![resim](https://user-images.githubusercontent.com/47951005/91015593-0e204c00-e5f4-11ea-860b-e15e8f91fe18.png)
@@ -28,4 +28,6 @@ to reveal if the payment is approved or not. If the payment is approved notifica
 If the payment is not successful, notifications appear on both applications accordingly as follows:
 
 ![resim](https://user-images.githubusercontent.com/47951005/91016570-a1a64c80-e5f5-11ea-884d-8d4b0f31bb12.png)
+
+Now everything is reset and the POS can make new sales request.
 
